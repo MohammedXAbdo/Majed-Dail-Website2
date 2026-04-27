@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold-primary: #D4A017;
+  --gold-light: #FFD966;
+  --gold-dark: #B8860B;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f0f1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #D4A017, #B8860B);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFD966, #D4A017);
+}
+
+/* Glass effect classes */
+@layer components {
+  .glass {
+    @apply backdrop-blur-xl bg-white/10 border border-white/20;
+  }
+
+  .glass-dark {
+    @apply backdrop-blur-xl bg-black/20 border border-white/10;
+  }
+
+  .glass-gold {
+    @apply backdrop-blur-xl bg-yellow-500/5 border border-yellow-500/20;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-gold-400 via-gold-300 to-gold-500;
+  }
+
+  .btn-gold {
+    @apply bg-gradient-to-r from-gold-500 to-gold-600 text-white px-8 py-3 rounded-full font-semibold
+    hover:from-gold-400 hover:to-gold-500 transition-all duration-300 shadow-lg shadow-gold-500/25
+    hover:shadow-gold-500/40 hover:scale-105 active:scale-95;
+  }
+
+  .btn-outline-gold {
+    @apply border-2 border-gold-500 text-gold-500 px-8 py-3 rounded-full font-semibold
+    hover:bg-gold-500 hover:text-white transition-all duration-300
+    hover:shadow-lg hover:shadow-gold-500/25 hover:scale-105 active:scale-95;
+  }
+
+  .section-padding {
+    @apply py-20 md:py-32 px-4 md:px-8 lg:px-16;
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 30px rgba(212, 160, 23, 0.15);
+  }
+
+  .glow-effect:hover {
+    box-shadow: 0 0 50px rgba(212, 160, 23, 0.3);
+  }
+}
+
+/* Particle animation */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--gold-primary);
+  border-radius: 50%;
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient border animation */
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #D4A017, #FFD966, #B8860B, #D4A017);
+  border-radius: inherit;
+  z-index: -1;
+  background-size: 300% 300%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Line decoration */
+.line-decoration {
+  position: relative;
+}
+
+.line-decoration::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #D4A017, #FFD966);
+  border-radius: 2px;
+}
+
+/* RTL Support */
+[dir='rtl'] .line-decoration::after {
+  left: auto;
+  right: 0;
+}
+
+/* Selection color */
+::selection {
+  background: rgba(212, 160, 23, 0.3);
+  color: #FFD966;
+}
+
+/* Light mode overrides */
+.light ::-webkit-scrollbar-track {
+  background: #f7f7f8;
+}
