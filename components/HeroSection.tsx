@@ -34,9 +34,11 @@ export default function HeroSection() {
           <div className="relative">
             <div className="w-36 h-36 md:w-44 md:h-44 rounded-full bg-gradient-to-br from-gold-400 to-gold-600 p-1 animate-glow">
               <div className="w-full h-full rounded-full bg-gray-100 dark:bg-dark-800 flex items-center justify-center overflow-hidden">
-                <span className="text-5xl md:text-6xl font-bold text-gradient-gold">
-                  {language === 'ar' ? 'م' : 'M'}
-                </span>
+                <img
+                  src="https://media.licdn.com/dms/image/v2/D5603AQFrnzRwuxfnFw/profile-displayphoto-shrink_800_800/B56ZbjQXF_H4Ac-/0/1747569439593?e=1778716800&v=beta&t=v2WMPDAk8rGzbVikIKSsOY6V1eioS9xVOQvr5CDWlUE"
+                  alt="Majed Al-Dail"
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             <motion.div
